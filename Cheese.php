@@ -1,17 +1,16 @@
 <?php
 class Cheese {
-    public $brand;
+    public $farmer;
 
     public $weight;
 
-    public $milk;
+    public $milk='';
 
     public $price;
 
-    public function __construct($_brand, $_weight, $_milk, $_price) {
-        $this->brand = $_brand;
+    public function __construct($_farmer, $_weight, $_price) {
+        $this->farmer = $_farmer;
         $this->weight = $_weight;
-        $this->milk = $_milk;
         $this->price = $_price;
     }
 }

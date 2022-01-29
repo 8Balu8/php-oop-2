@@ -5,12 +5,12 @@ class BuffaloCheese extends Cheese
     // override
     public $milk='Buffalo\'s milk';
 
-    public $typeCheese='Mozzarella';
+    public $typeCheese;
 
     // override
-    public function __construct($_brand, $_weight, $_milk, $_price, $_typeCheese)
+    public function __construct($_brand, $_weight, $_price, $_typeCheese)
     {
-        parent::__construct($_brand, $_weight, $_milk, $_price);
+        parent::__construct($_brand, $_weight, $_price);
         $this->typeCheese=$_typeCheese;  
     }
 
