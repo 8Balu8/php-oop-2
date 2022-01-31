@@ -11,9 +11,8 @@ class Cheese {
     public function __construct($_farmer, $_weight, $_price) {
         $this->farmer = $_farmer;
         $this->weight = $_weight;
-        $this->price = $_price;
 
-        if(is_int($_price)) {
+        if(is_int($_price) || is_float($_price)) {
             $this->price = $_price;
         } else {
             throw new Exception('$_price deve contenere numeri');
