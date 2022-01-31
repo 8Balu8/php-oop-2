@@ -12,6 +12,12 @@ class Cheese {
         $this->farmer = $_farmer;
         $this->weight = $_weight;
         $this->price = $_price;
+
+        if(is_int($_weight)) {
+            $this->weight = $_weight;
+        } else {
+            throw new Exception('$_weight deve contenere numeri');
+        }
     }
 }
 ?>
