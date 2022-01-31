@@ -4,12 +4,18 @@ require_once __DIR__.'/CowCheese.php';
 require_once __DIR__.'/SheepCheese.php';
 require_once __DIR__.'/User.php';
 
-$buffalo_mozzarella=new BuffaloCheese('Azienda Agricola Tempio','250g',9.90,'Mozzarella');
-var_dump($buffalo_mozzarella);
-$gorgonzola=new CowCheese('Casarrigoni','350g',8.40,'Gorgonzola');
-var_dump($gorgonzola);
-$pecorino=new SheepCheese('De\'Magi','325g',12.90,'Pecorino');
-var_dump($pecorino);
+try {
+    $buffalo_mozzarella=new BuffaloCheese('Azienda Agricola Tempio','250g',9.90,'Mozzarella');
+    $gorgonzola=new CowCheese('Casarrigoni','350g',8.40,'Gorgonzola');
+    $pecorino=new SheepCheese('De\'Magi','325g',12.90,'Pecorino');
+} catch(Exception $e) {
+    // Write to file log
+    error_log($e);
+
+    // Write message fatal error
+    echo '<div style="text-align:center; border-bottom: 1px solid red; color: red;">Server in ordinary maintenance.</div>';
+    die();
+}
 
 $user=new User('Mario','Rossi','mariorossi@emil.it');
 $user->addProduct($pecorino);
