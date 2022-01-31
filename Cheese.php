@@ -13,10 +13,10 @@ class Cheese {
         $this->weight = $_weight;
         $this->price = $_price;
 
-        if(is_int($_weight)) {
-            $this->weight = $_weight;
+        if(is_int($_price)) {
+            $this->price = $_price;
         } else {
-            throw new Exception('$_weight deve contenere numeri');
+            throw new Exception('$_price deve contenere numeri');
         }
     }
 }
